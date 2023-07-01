@@ -14,7 +14,16 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
     // prompt how many characters
     var passLength = prompt("How many characters would you like your password to be?");
-    // var characters = '';
+    // cancels function if password is too small or too large
+    if (passLength < 8 || passLength > 128) {
+        window.alert("Please choose a valid number!");
+        return("Please choose a number between 8 - 128!");
+    }
+    // cancels function if user enters anything not a number or uses a space
+    if (passLength == NaN || " ") {
+        window.alert("Please enter a valid number!");
+        return("Please choose a number between 8 - 128!");
+    }
     
     // What types of charcters
     // special, number, upper, lower
@@ -36,8 +45,9 @@ function generatePassword() {
 
     var passwordPrompts = (passLength + ", " + lowercaseLetters + ", " + uppercaseLetters + ", " + specialConfirm + ", " + numberConfirm);
 
+
     if (lowercaseLetters === false && uppercaseLetters === false && specialConfirm === false && numberConfirm === false) {
-        alert("Please choose at least one of the character types to proceed!");
+        window.alert("Please choose at least one of the character types to proceed!");
     }
     // var for charcters
     var chosenChars = [];
@@ -67,4 +77,3 @@ function generatePassword() {
     // return password;
     return finalPass.join("");
 }
-writePassword();
