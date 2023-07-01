@@ -38,7 +38,7 @@ function generatePassword() {
     var nummerChars = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
 
-    var passwordPrompts = (passLength + ", " + lowercaseLetters + ", " + uppercaseLetters + ", " + specialConfirm + ", " + numberConfirm);
+    var passwordPrompts = (lowercaseLetters + ", " + uppercaseLetters + ", " + specialConfirm + ", " + numberConfirm);
     console.log(passwordPrompts);
 
     var chosenChars = [];
@@ -60,6 +60,13 @@ function generatePassword() {
     }
 
     console.log(chosenChars);
+
+    var finalPass;
+    for (var i = 0; i <= passLength; i++) {
+        finalPass = [Math.floor(Math.random() * chosenChars.length)]
+    }
+
+    return finalPass;
     // var for charcters
     // What types of charctyers
     // special, number, upper, lower
