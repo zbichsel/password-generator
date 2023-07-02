@@ -46,7 +46,7 @@ function generatePassword() {
     }
     // var for charcters
     var chosenChars = [];
-    // take all true arrays and concat into new array -loop
+    // take all true arrays and concat into new array
     if (lowercaseLetters) {
         chosenChars = chosenChars.concat(lowercaseABC);
     }
@@ -61,6 +61,7 @@ function generatePassword() {
     }
     // Use answers to make password
     var finalPass = [];
+    // create loop to generate passLength input at beginning of function
     for (var i = 0; i < passLength; i++) {
         // choose random chars from arr based on user input
         var randomPass = chosenChars[Math.floor(Math.random() * chosenChars.length)];
