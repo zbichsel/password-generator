@@ -11,6 +11,11 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+// What types of charcters
+// special, number, upper, lower
+// vars that include all possible charcters 
+// seperate vars for each type, arrays
+// example var upperLetters = ["A", "B", "C"]
 var lowercaseABC = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var uppercaseABC = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var specialChars = ['`', '~', '!', '@', '#', '$', '%', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', ',', '<', '.', '>', '/', '?', '[', '{', ']', '}', '|'];
@@ -30,23 +35,15 @@ function generatePassword() {
     //     return("Please choose a number between 8 - 128!");
     // }
     
-    // What types of charcters
-    // special, number, upper, lower
-    // vars that include all possible charcters 
-    // seperate vars for each type, arrays
-    // example var upperLetters = ["A", "B", "C"]
-    var lowercaseLetters = window.confirm("Would you like the password to include lowercase letters?");
-    
-    var uppercaseLetters = window.confirm("Would you like this password to include uppercase letters?");
-    
-    var specialConfirm = window.confirm("Would you like this password to include special characters?");
     // window.confirm to confirm all choices
-
+    var lowercaseLetters = window.confirm("Would you like the password to include lowercase letters?");
+    var uppercaseLetters = window.confirm("Would you like this password to include uppercase letters?");
+    var specialConfirm = window.confirm("Would you like this password to include special characters?");
     var numberConfirm = window.confirm("Would you like this password to include numbers?");
-
+    // display choices in console log
     var passwordPrompts = (passLength + ", " + lowercaseLetters + ", " + uppercaseLetters + ", " + specialConfirm + ", " + numberConfirm);
-
-
+    console.log(passwordPrompts);
+    // create parameters for choosing at least one type of the characters to have in password
     if (lowercaseLetters === false && uppercaseLetters === false && specialConfirm === false && numberConfirm === false) {
         window.alert("Please choose at least one of the character types to proceed!");
     }
