@@ -67,7 +67,7 @@ function generatePassword() {
         // var push into new array
         finalPass.push(randomPass);
     }
-    console.log(finalPass);
+    console.log("We've created a happy little password to protect your accounts: " + finalPass.join(""));
     // return password;
     return finalPass.join("");
 }
