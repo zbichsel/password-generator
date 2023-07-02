@@ -11,19 +11,24 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+var lowercaseABC = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var uppercaseABC = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var specialChars = ['`', '~', '!', '@', '#', '$', '%', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', ',', '<', '.', '>', '/', '?', '[', '{', ']', '}', '|'];
+var nummerChars = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
 function generatePassword() {
     // prompt how many characters
-    var passLength = prompt("How many characters would you like your password to be?");
+    var passLength = window.prompt("How many characters would you like your password to be?");
     // cancels function if password is too small or too large
     if (passLength < 8 || passLength > 128) {
         window.alert("Please choose a valid number!");
         return("Please choose a number between 8 - 128!");
     }
     // cancels function if user enters anything not a number or uses a space
-    if (passLength == NaN || " ") {
-        window.alert("Please enter a valid number!");
-        return("Please choose a number between 8 - 128!");
-    }
+    // if (passLength == NaN || " ") {
+    //     window.alert("Please enter a valid number!");
+    //     return("Please choose a number between 8 - 128!");
+    // }
     
     // What types of charcters
     // special, number, upper, lower
@@ -31,17 +36,13 @@ function generatePassword() {
     // seperate vars for each type, arrays
     // example var upperLetters = ["A", "B", "C"]
     var lowercaseLetters = window.confirm("Would you like the password to include lowercase letters?");
-    var lowercaseABC = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     
     var uppercaseLetters = window.confirm("Would you like this password to include uppercase letters?");
-    var uppercaseABC = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
     
     var specialConfirm = window.confirm("Would you like this password to include special characters?");
-    var specialChars = ['`', '~', '!', '@', '#', '$', '%', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', ',', '<', '.', '>', '/', '?', '[', '{', ']', '}', '|'];
     // window.confirm to confirm all choices
 
     var numberConfirm = window.confirm("Would you like this password to include numbers?");
-    var nummerChars = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
     var passwordPrompts = (passLength + ", " + lowercaseLetters + ", " + uppercaseLetters + ", " + specialConfirm + ", " + numberConfirm);
 
