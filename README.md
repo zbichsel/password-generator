@@ -27,6 +27,10 @@ https://www.github.com/zbichsel/password-generator
 
 N/A
 
+## Contact Me
+
+If you have any questions, please contact me at: biksel09@gmail.com
+
 ## License
 
 Please refer to the LICENSE in the repository.
