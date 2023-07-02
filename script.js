@@ -26,12 +26,11 @@ function generatePassword() {
         window.alert("Please choose a valid number!");
         return("Please choose a number between 8 - 128!");
     }
-    // cancels function if user enters anything not a number or uses a space
-    // if (passLength == NaN || " ") {
-    //     window.alert("Please enter a valid number!");
-    //     return("Please choose a number between 8 - 128!");
-    // }
-    
+    // cancels function if user enters anything other than a number
+    if (isNaN(passLength)) {
+        window.alert("Please choose a valid number!");
+        return("Please choose a number between 8 - 128!");
+    }
     // window.confirm to confirm all choices
     var lowercaseLetters = window.confirm("Would you like the password to include lowercase letters?");
     var uppercaseLetters = window.confirm("Would you like this password to include uppercase letters?");
@@ -65,7 +64,6 @@ function generatePassword() {
     for (var i = 0; i < passLength; i++) {
         // choose random chars from arr based on user input
         var randomPass = chosenChars[Math.floor(Math.random() * chosenChars.length)];
-
         // var push into new array
         finalPass.push(randomPass);
     }
